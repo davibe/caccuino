@@ -12,5 +12,3 @@ $ npm start
 ```sh
 $ npm build
 ```
-
----

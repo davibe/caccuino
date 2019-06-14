@@ -1,17 +1,16 @@
-# parceljs-markdown-example
+# caccuino-doc
 
 ## start
 
 ```sh
-$ yarn install
-$ yarn start
+$ npm install
+$ npm start
 ```
 
 ## build
 
 ```sh
-$ yarn build
+$ npm build
 ```
 
 ---
-https://github.com/arcatdmz/parceljs-markdown-example

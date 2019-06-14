@@ -1,0 +1,269 @@
+/* orange #F75258 backgroiund #EDE8E4 */
+/* darkblue #212553 background #EDE8E4 */
+
+@font-face {
+  font-family: "Presicav Tight Ul";
+  src:
+    url("https://brand.deltatre.com/upload/screens/179359/4cb62a811f341c93b77e0b382abdf38d-1536076040.woff") format("woff"),
+    url("https://brand.deltatre.com/upload/screens/179359/5ac0b04e55338b245b3fa333760f5310-1536076040.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Presicav Tight Rg";
+  src:
+    url("https://brand.deltatre.com/upload/screens/179359/bd8e56e3eae93448969422884a58bc7b-1536076040.woff") format("woff"),
+    url("https://brand.deltatre.com/upload/screens/179359/4bb037153d3b80f728a618198dfccd8d-1536076040.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Presicav Tight Hv";
+  src:
+    url("https://brand.deltatre.com/upload/screens/179359/706f77de945fbb4afba6b85b6b4fef6f-1536076040.woff") format("woff"),
+    url("https://brand.deltatre.com/upload/screens/179359/4cbcc0e261fc3feb9d6804966d9bc70a-1536076040.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Presicav Tight Lt";
+  src:
+    url("https://brand.deltatre.com/upload/screens/179359/e66c4735aa8a761c8714139e8f0d0b9e-1536076040.woff") format("woff"),
+    url("https://brand.deltatre.com/upload/screens/179359/7e57762af8fe3e1f41d66eb6f4d7ae80-1536076040.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Presicav Tight Rg";
+  src:
+    url("https://brand.deltatre.com/upload/screens/179359/22b6e059226f211d18e84e58bc0876e9-1536076040.woff") format("woff"),
+    url("https://brand.deltatre.com/upload/screens/179359/bd6a01d3541d24ff75d67ec389d83150-1536076040.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Presicav Tight Xl";
+  src:
+    url("https://brand.deltatre.com/upload/screens/179359/14207de797cf80cd787ba604e9cd79f0-1536076040.woff") format("woff"),
+    url("https://brand.deltatre.com/upload/screens/179359/3861579c585d7f525fdba1cb948b51ac-1536076040.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gibson Regular";
+  src:
+    url("https://brand.deltatre.com/upload/screens/179359/81a9c83f2523449e5d7bcbeb62227e7f-1536076040.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gibson Light";
+  src:
+    url("https://brand.deltatre.com/upload/screens/179359/06cc42c4015403cb6cb4e45e9a193d2a-1536076040.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gibson LighItalic";
+  src:
+    url("https://brand.deltatre.com/upload/screens/179359/2ec194286aefb387450d8e431c9f613b-1536076040.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gibson Bold";
+  src:
+    url("https://brand.deltatre.com/upload/screens/179359/2b3dc29c58cdd0192d5675dcd7baa6ac-1536076040.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+html {
+  background-color: rgba(236, 236, 236, 0.281);
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+body {
+  background-color: white;
+}
+
+html,
+body {
+  font-family: "Gibson Light", "Mier B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: rgb(33, 37, 83);
+  font-size: 17px;
+  line-height: 1.3;
+  font-weight: 100;
+  text-transform: none;
+  font-style: normal;
+  text-decoration: none;
+  letter-spacing: normal;
+  padding: 40px;
+}
+
+p {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-family: "Presicav Tight Lt", "Mier B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: rgb(247, 82, 88);
+  font-size: 40px;
+  line-height: 1em;
+  font-weight: 300;
+  text-transform: none;
+  font-style: normal;
+  text-decoration: none;
+  margin-top: 0;
+  letter-spacing: normal;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+h2 {
+  font-family: "Presicav Tight Rg", "Mier B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  /* color: rgb(146, 148, 169); */
+  color: rgb(247, 82, 88);
+  font-size: 22px;
+  line-height: 1em;
+  font-weight: 700;
+  text-transform: none;
+  font-style: normal;
+  text-decoration: none;
+  margin-top: 0;
+  letter-spacing: normal;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+h3 {
+  font-family: "Presicav Tight Rg", "Mier B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: rgb(33, 37, 83);
+  font-size: 18px;
+  line-height: 1em;
+  font-weight: 700;
+  text-transform: none;
+  font-style: normal;
+  text-decoration: none;
+  margin-top: 0;
+  letter-spacing: normal;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+h4,
+h5,
+h6 {
+  font-family: "Presicav Tight Rg", "Mier B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: rgb(33, 37, 83);
+  font-size: 16px;
+  line-height: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
+  text-decoration: none;
+  margin-top: 0;
+  letter-spacing: normal;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+h5 {
+  color: rgb(102, 103, 124);
+}
+
+h6 {
+  color: rgb(146, 148, 169);
+}
+
+
+/* tables */
+
+table {
+  padding: 0;
+  word-break: initial;
+}
+
+table tr {
+  border-top: 1px solid #dfe2e5;
+  margin: 0;
+  padding: 0;
+}
+
+table tr:nth-child(2n),
+thead {
+  background-color: #f8f8f8;
+}
+
+table tr th {
+  font-weight: bold;
+  border: 1px solid #dfe2e5;
+  border-bottom: 0;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table tr td {
+  border: 1px solid #dfe2e5;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+  margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+  margin-bottom: 0;
+}
+
+/* code */
+
+code {
+  padding: 0 2px 0 2px;
+  padding: 0;
+}
+
+pre {
+  padding: 1em;
+  border-radius: 3px;
+  border: 1px solid #e7eaed;
+  background-color: #f8f8f8;
+}
+
+/* horizontal line */
+
+hr {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border: 0;
+  border-top: 1px solid #e7eaed;
+}
+
+/* links */
+
+a {
+  text-decoration: none;
+  color: rgb(33, 37, 83);
+}
+
+/* images */
+
+img {
+  max-width: 100%;
+}

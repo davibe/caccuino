@@ -1,5 +1,7 @@
 import './style/typebase.css'
 import './style/delta3.css'
+import 'markdown-it-highlight/dist/index.css'
+
 
 import pages from "./pages/**/*.md"
 

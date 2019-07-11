@@ -61,12 +61,12 @@ A numbered list
 
 Code can be `inlined()`
 
-```
-This could be some code();
-Multiline as well
-	with some
-		formatting
-    of some sort.
+```javascript
+var a = 1
+console.log(a++)
+const a = async () => {
+  return await 1
+}
 ```
 
 

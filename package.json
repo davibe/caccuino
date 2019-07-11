@@ -10,8 +10,8 @@
     "build": "rm -rf dist; parcel build src/index.html --out-dir dist/ --public-url ./ --no-cache"
   },
   "devDependencies": {
-    "parcel-plugin-markdown": "^0.3.1",
-    "parcel-plugin-markdown-it": "0.0.1",
+    "markdown-it-highlight": "^0.2.0",
+    "parcel-plugin-markdown-it": "davibe/parcel-plugin-markdown-it#master",
     "typescript": "^3.3.3"
   },
   "dependencies": {

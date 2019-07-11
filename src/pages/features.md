@@ -6,9 +6,9 @@
 - builtin webserver with HOT-RELOADING
 - uber-simple code, easily customizable
 - exports to static files
+- syntax hilight for code blocks
 
 ## Upcoming
 
 - github deployment
 - printable css media
-- syntax hilight for code blocks

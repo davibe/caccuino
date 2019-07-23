@@ -2,8 +2,12 @@ import './style/typebase.css'
 import './style/delta3.css'
 import 'markdown-it-highlight/dist/index.css'
 
+console.log(`Caccuino working directory: ${__dirname}`)
 
-import pages from "./pages/**/*.md"
+// import pages from `./pages/**/*.md`
+var pages = require(`../**/*.md`)
+
+console.log(`Caccuino pages tree`, pages)
 
 const page = window.location.pathname
   .substr(1)
@@ -11,7 +15,9 @@ const page = window.location.pathname
   .split('/')
   .reduce((scope, acc) => scope[acc], pages));
 
-document.querySelector(".menu").innerHTML = pages.menu.html
+if (pages.menu) {
+  document.querySelector(".menu").innerHTML = pages.menu.html
+}
 if (page) {
   document.querySelector(".content").innerHTML = page.html || "not found"
 } else {

@@ -1,7 +1,7 @@
 {
   "name": "parceljs-markdown-example",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/cli.js",
   "repository": "git@github.com:arcatdmz/parceljs-markdown-example.git",
   "author": "Jun Kato <i@junkato.jp>",
   "license": "MIT",

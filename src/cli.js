@@ -7,12 +7,10 @@ const ncp = require('ncp').ncp
 const sourceDir = Path.join(__dirname, './caccuino-bundle')
 const bundleDir = Path.join(process.cwd(), './caccuino-bundle')
 
-const entryFiles = Path.join(bundleDir, './index.html')
-
 // Bundler options
 const options = {
   outDir: './dist', // The out directory to put the build files in, defaults to dist
-  publicUrl: './', // The url to serve on, defaults to '/'
+  publicUrl: '.', // The url to serve on, defaults to '/'
   watch: true, // Whether to watch the files and rebuild them on change, defaults to process.env.NODE_ENV !== 'production'
   cache: false, // Enabled or disables caching, defaults to true
   cacheDir: '.cache', // The directory cache gets put in, defaults to .cache
@@ -40,12 +38,20 @@ ncp(sourceDir, bundleDir, (e) => {
     return
   }
 
+  const entryFiles = Path.join(bundleDir, './index.html')
   console.log(`Entry file: ${entryFiles}`)
+
   const bundler = new Bundler(entryFiles, options)
+  bundler.addAssetType(
+    '.md', require.resolve('parcel-plugin-markdown-it/MarkdownAsset.js')
+  )
+  bundler.options.rootDir = Path.resolve(Path.join(bundler.options.rootDir, '..'))
+  console.log(bundler.options)
 
   const express = require('express')
   const app = express()
   app.use(express.static('./dist'))
+  app.use(express.static('./'))
   app.use(bundler.middleware())
   app.listen(8080)
 })

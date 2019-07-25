@@ -20,7 +20,9 @@
   },
   "dependencies": {
     "@types/node": "^12.6.8",
+    "internal-ip": "^4.3.0",
     "ncp": "^2.0.0",
+    "open": "^6.4.0",
     "parcel-bundler": "^1.11.0",
     "serve-index": "^1.9.1"
   }

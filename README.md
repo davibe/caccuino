@@ -1,4 +1,4 @@
-# caccuino-doc
+# caccuino
 
 ## start
 

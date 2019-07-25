@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "express": "^4.17.1",
+    "markdown-it-diagrams": "0.0.6",
     "markdown-it-highlight": "^0.2.0",
     "parcel-plugin-markdown-it": "davibe/parcel-plugin-markdown-it#master",
     "typescript": "^3.3.3"

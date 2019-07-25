@@ -1,5 +1,4 @@
-require('../*.css')
-
+import '../*.css'
 import 'markdown-it-highlight/dist/index.css'
 
 console.log(`working directory: ${__dirname}`)

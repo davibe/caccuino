@@ -1,9 +1,9 @@
 {
-  "name": "parceljs-markdown-example",
-  "version": "1.0.0",
+  "name": "caccuino",
+  "version": "0.1.3",
   "main": "src/cli.js",
-  "repository": "git@github.com:arcatdmz/parceljs-markdown-example.git",
-  "author": "Jun Kato <i@junkato.jp>",
+  "repository": "git@github.com:davibe/caccuino.git",
+  "author": "Davide Bertola <dade@dadeb.it>",
   "license": "MIT",
   "bin": {
     "caccuino": "./src/cli.js"
@@ -12,14 +12,14 @@
     "start": "node src/cli"
   },
   "devDependencies": {
-    "express": "^4.17.1",
     "markdown-it-diagrams": "0.0.6",
     "markdown-it-highlight": "^0.2.0",
-    "parcel-plugin-markdown-it": "davibe/parcel-plugin-markdown-it#master",
     "typescript": "^3.3.3"
   },
   "dependencies": {
     "@types/node": "^12.6.8",
+    "parcel-plugin-markdown-it": "davibe/parcel-plugin-markdown-it#master",
+    "express": "^4.17.1",
     "internal-ip": "^4.3.0",
     "ncp": "^2.0.0",
     "open": "^6.4.0",

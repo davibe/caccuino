@@ -16,8 +16,8 @@ const options = {
   outDir: './caccuino-bundle/dist', // The out directory to put the build files in, defaults to dist
   publicUrl: '/', // The url to serve on, defaults to '/'
   watch: true, // Whether to watch the files and rebuild them on change, defaults to process.env.NODE_ENV !== 'production'
-  cache: false, // Enabled or disables caching, defaults to true
-  cacheDir: '.cache', // The directory cache gets put in, defaults to .cache
+  cache: true, // Enabled or disables caching, defaults to true
+  cacheDir: './caccuino-bundle/cache', // The directory cache gets put in, defaults to .cache
   contentHash: false, // Disable content hash from being included on the filename
   global: 'moduleName', // Expose modules as UMD under this name, disabled by default
   minify: false, // Minify files, enabled if process.env.NODE_ENV === 'production'

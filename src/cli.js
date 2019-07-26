@@ -15,7 +15,7 @@ const entryFiles = path.join(bundleDir, './index.html')
 const options = {
   outDir: './caccuino-bundle/dist', // The out directory to put the build files in, defaults to dist
   publicUrl: '/', // The url to serve on, defaults to '/'
-  watch: true, // Whether to watch the files and rebuild them on change, defaults to process.env.NODE_ENV !== 'production'
+  watch: false, // Whether to watch the files and rebuild them on change, defaults to process.env.NODE_ENV !== 'production'
   cache: true, // Enabled or disables caching, defaults to true
   cacheDir: './caccuino-bundle/cache', // The directory cache gets put in, defaults to .cache
   contentHash: false, // Disable content hash from being included on the filename
@@ -43,11 +43,15 @@ ncp(sourceDir, bundleDir, (e) => {
   }
 
   console.log(`Entry file: ${entryFiles}`)
-
   const bundler = new Bundler(entryFiles, options)
+
   bundler.addAssetType(
-    '.md', require.resolve('parcel-plugin-markdown-it/MarkdownAsset.js')
+    'md', require.resolve('parcel-plugin-markdown-string/MarkdownAsset.js')
   )
+
+  // bundler.addAssetType(
+  //   '.md', require.resolve('parcel-plugin-markdown-it/MarkdownAsset.js')
+  // )
 
   const express = require('express')
   const serveIndex = require('serve-index')
@@ -71,6 +75,6 @@ ncp(sourceDir, bundleDir, (e) => {
   app.use(bundlerMiddleware)
   app.listen(8080)
   const open = require('open')
-  open(`http://${internalIp.v4.sync() || "localhost"}:8080`)
+  // open(`http://${internalIp.v4.sync() || "localhost"}:8080`)
 })
 

@@ -75,6 +75,8 @@ ncp(sourceDir, bundleDir, (e) => {
   app.use(bundlerMiddleware)
   app.listen(8080)
   const open = require('open')
-  // open(`http://${internalIp.v4.sync() || "localhost"}:8080`)
+  bundler.on('buildEnd', () => {
+    open(`http://${internalIp.v4.sync() || "localhost"}:8080`)
+  })
 })
 

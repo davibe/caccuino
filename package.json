@@ -1,20 +1,29 @@
 {
-  "name": "parceljs-markdown-example",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:arcatdmz/parceljs-markdown-example.git",
-  "author": "Jun Kato <i@junkato.jp>",
+  "name": "caccuino",
+  "version": "0.1.6",
+  "main": "src/cli.js",
+  "repository": "git@github.com:davibe/caccuino.git",
+  "author": "Davide Bertola <dade@dadeb.it>",
   "license": "MIT",
+  "bin": {
+    "caccuino": "./src/cli.js"
+  },
   "scripts": {
-    "start": "parcel src/index.html --out-dir dist/",
-    "build": "rm -rf dist; parcel build src/index.html --out-dir dist/ --public-url ./ --no-cache"
+    "start": "node src/cli"
   },
   "devDependencies": {
+    "markdown-it-diagrams": "0.0.6",
     "markdown-it-highlight": "^0.2.0",
-    "parcel-plugin-markdown-it": "davibe/parcel-plugin-markdown-it#master",
+    "@types/node": "^12.6.8",
     "typescript": "^3.3.3"
   },
   "dependencies": {
-    "parcel-bundler": "^1.11.0"
+    "parcel-plugin-markdown-string": "^1.3.5",
+    "express": "^4.17.1",
+    "internal-ip": "^4.3.0",
+    "ncp": "^2.0.0",
+    "open": "^6.4.0",
+    "parcel-bundler": "^1.11.0",
+    "serve-index": "^1.9.1"
   }
 }

@@ -3,7 +3,7 @@
 I use this to generate simple technical wikis that are git and markdown based
 
     npm install -g caccuino # or `npm link .` from the repository
-    cd /folder/with/markdown/files
+    cd /folder/with/markdown/files # for example `pages` dir in this repo
     caccuino
   
 The spawned server will automatically serve 
@@ -17,7 +17,6 @@ The spawned server will automatically serve
 
 TODOs:
 
-- provide a renderable example
 - render an outline of the current document
 - render a filetree of adiacent documents
 - better printable css media

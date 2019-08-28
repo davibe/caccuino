@@ -20,4 +20,5 @@ TODOs:
 - provide a renderable example
 - render an outline of the current document
 - render a filetree of adiacent documents
+- better printable css media
 - hotreload changes (?)

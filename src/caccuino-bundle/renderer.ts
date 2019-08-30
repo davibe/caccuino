@@ -10,7 +10,11 @@ const md = new MarkdownIt('default', {
   html: true,
   linkify: true,
   typographer: true
-}).use(Meta).use(hljs).use(diagramPlugin).use(anchor).use(toc, { includeLevel: [1, 2, 3] })
+}).use(Meta)
+  .use(hljs)
+  .use(diagramPlugin)
+  .use(anchor)
+  .use(toc, { includeLevel: [1, 2, 3] })
 
 
 const render = (string) => {

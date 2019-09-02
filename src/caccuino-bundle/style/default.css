@@ -196,6 +196,7 @@ img {
   padding: 40px;
   background-color: white;
   align-self: stretch;
+  flex: 1;
   overflow: scroll;
 }
 
@@ -218,9 +219,11 @@ img {
 }
 
 @media only screen {
-  
+
   /* let inner elements (sidebar, content) handle scrolling independently */
-  body, html, .container {
+  body,
+  html,
+  .container {
     height: 100%;
     overflow: hidden;
   }
@@ -239,10 +242,14 @@ img {
   }
 
   .sidebar ul {
-    padding-inline-start: 20px;
+    padding-inline-start: 1em;
     list-style-type: none;
     text-decoration: capitalize;
     line-height: 1.7em;
+  }
+
+  .sidebar > ul {
+    padding-inline-start: 0em;
   }
 
 }

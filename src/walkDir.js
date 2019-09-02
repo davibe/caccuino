@@ -1,5 +1,6 @@
-const path = require('path');
-const fs = require('fs');
+const path = require('path')
+const fs = require('fs')
+const flatMap = require('flatmap')
 
 const ignoreDir = (d) => d.startsWith('.') || d.startsWith('node_modules')
 
@@ -7,7 +8,7 @@ function walkDir(dir) {
   var obj = {}; // an object similar to { dir: { subdir: { subsub: {} } } }
   var list = []; // a list similar to bash $ find .
 
-  list = fs.readdirSync(dir).flatMap(f => {
+  list = flatMap(fs.readdirSync(dir), f => {
     let dirPath = path.join(dir, f);
     let isDirectory = fs.statSync(dirPath).isDirectory();
     if (isDirectory) {

@@ -12,7 +12,6 @@ function walkDir(dir) {
     let isDirectory = fs.statSync(dirPath).isDirectory();
     if (isDirectory) {
       if (dir != '.' && ignoreDir(dir)) {
-        console.log('ignoring', dir)
         return []
       }
       const [obj2, list] = walkDir(dirPath);

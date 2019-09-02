@@ -1,11 +1,9 @@
 
-# page3
+# Page1
 
 ## This is a subtitle
 
-Wow, take a look at [non-existent page](/sub/DAI.md)
-
-
+Wow, take a look at [non-existent page](nonexistent.md)
 
 ```javascript
 var a = 2;

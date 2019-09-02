@@ -188,6 +188,7 @@ img {
   justify-content: flex-start;
   align-self: stretch;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .content {
@@ -198,6 +199,7 @@ img {
   align-self: stretch;
   flex: 1;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* sidebar (document outline) management */
@@ -236,7 +238,8 @@ img {
     background-color: #f8f8f8;
     padding: 1.5em;
     margin: 0em;
-    white-space: nowrap;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     max-width: 25%;
     margin-top: 2em;
   }
@@ -246,9 +249,10 @@ img {
     list-style-type: none;
     text-decoration: capitalize;
     line-height: 1.7em;
+
   }
 
-  .sidebar > ul {
+  .sidebar>ul {
     padding-inline-start: 0em;
   }
 

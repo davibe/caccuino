@@ -9,10 +9,23 @@ import render from './renderer'
   document.body.appendChild(link)
 })
 
+const rawFetch = async (pagePath: string): Promise<string> => {
+  const res = await fetch(`/___raw___/${pagePath}`)
+  const body = `${await res.text()}\n[[toc]]`
+  return body
+}
+
+const dirListFetch = async (): Promise<Array<string>> => {
+  const res = await fetch(`/___dirs___/`)
+  const dirList: Array<string> = await res.json()
+  return dirList
+}
+
 const doit = async () => {
   const pagePath = unescape(window.location.pathname).substr(1)
-  const res = await fetch(`/___raw___/${pagePath}`)
-  const body = `${ await res.text() }\n[[toc]]`
+  // data fetch (parallel)
+  const [body, dirList] = await Promise.all([rawFetch(pagePath), dirListFetch()])
+
   const page = render(body)
 
   if (page) {
@@ -26,6 +39,22 @@ const doit = async () => {
     }
     sidebar.innerHTML = tocEl.innerHTML
     tocEl.remove()
+
+    // generate the  "files" section
+    const dirPath = pagePath.split("/").reverse().slice(1).reverse().join(`/`)
+    const otherDocs = dirList
+      .filter(s => s.endsWith('.md')) // only mds
+      .filter(s => s.startsWith(dirPath)) // not current page
+      .filter(s => s != pagePath) // only starting with current path
+      .map(s => s.replace(dirPath, ``)) // remove current path from filename
+      .map(s => s.replace(/^\//, ``)) // remove trailing slash
+      .filter(s => !s.includes('/')) // exclude subdirs
+      .sort()
+      .map(s => `[${s.replace(/\.md$/g, ``)}](${escape(s)})`)
+      .reverse().concat('[⤾](..)').reverse()
+    const otherDocsMd = `#### files\n\n - ${ otherDocs.join('\n - ') }`
+    const otherDocsHtml = render(otherDocsMd).html
+    sidebar.innerHTML += `<hr/>${otherDocsHtml}`
 
   } else {
     document.querySelector(".content").innerHTML = "page not found"

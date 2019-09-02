@@ -188,6 +188,7 @@ img {
   justify-content: flex-start;
   align-self: stretch;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .content {
@@ -198,6 +199,7 @@ img {
   align-self: stretch;
   flex: 1;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* sidebar (document outline) management */
@@ -237,9 +239,9 @@ img {
     padding: 1.5em;
     margin: 0em;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     max-width: 25%;
     margin-top: 2em;
-    overflow: scroll;
   }
 
   .sidebar ul {

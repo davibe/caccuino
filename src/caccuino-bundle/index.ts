@@ -27,6 +27,24 @@ const doit = async () => {
     sidebar.innerHTML = tocEl.innerHTML
     tocEl.remove()
 
+    // generate the  "files" section
+    const res = await fetch(`/___dirs___/`)
+    const dirList: Array<string> = await res.json()
+    const dirPath = pagePath.split("/").reverse().slice(1).reverse().join(`/`)
+    const otherDocs = dirList
+      .filter(s => s.endsWith('.md')) // only mds
+      .filter(s => s.startsWith(dirPath)) // not current page
+      .filter(s => s != pagePath) // only starting with current path
+      .map(s => s.replace(dirPath, ``)) // remove current path from filename
+      .map(s => s.replace(/^\//, ``)) // remove trailing slash
+      .filter(s => !s.includes('/')) // exclude subdirs
+      .sort()
+      .map(s => `[${s.replace(/\.md$/g, ``)}](${escape(s)})`)
+      .reverse().concat('[..](..)').reverse()
+    const otherDocsMd = `#### files\n\n - ${ otherDocs.join('\n - ') }`
+    const otherDocsHtml = render(otherDocsMd).html
+    sidebar.innerHTML += `<hr/>${otherDocsHtml}`
+
   } else {
     document.querySelector(".content").innerHTML = "page not found"
   }

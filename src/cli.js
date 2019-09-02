@@ -5,6 +5,7 @@ const fs = require('fs')
 const internalIp = require('internal-ip')
 const express = require('express')
 const serveIndex = require('serve-index')
+const walkDir = require('./walkDir').walkDir
 
 const sourceDirWebapp = path.join(__dirname, './../dist')
 const entryFiles = path.join(sourceDirWebapp, './index.html')
@@ -15,6 +16,10 @@ app.get('/___raw___*', (req, res, next) => {
   const filePath = req.path.replace(`/___raw___/`, ``)
   const filePathFinal = path.resolve(path.join('.', unescape(filePath)))
   res.sendFile(filePathFinal)
+})
+app.get('/___dirs___', (req, res, next) => {
+  const [obj, list] = walkDir('.')
+  res.json(list).end()
 })
 
 app.get('/*.md', (req, res, next) => {

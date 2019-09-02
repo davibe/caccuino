@@ -236,9 +236,10 @@ img {
     background-color: #f8f8f8;
     padding: 1.5em;
     margin: 0em;
-    white-space: nowrap;
+    overflow-y: scroll;
     max-width: 25%;
     margin-top: 2em;
+    overflow: scroll;
   }
 
   .sidebar ul {
@@ -246,9 +247,10 @@ img {
     list-style-type: none;
     text-decoration: capitalize;
     line-height: 1.7em;
+
   }
 
-  .sidebar > ul {
+  .sidebar>ul {
     padding-inline-start: 0em;
   }
 

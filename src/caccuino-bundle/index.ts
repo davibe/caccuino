@@ -40,7 +40,7 @@ const doit = async () => {
       .filter(s => !s.includes('/')) // exclude subdirs
       .sort()
       .map(s => `[${s.replace(/\.md$/g, ``)}](${escape(s)})`)
-      .reverse().concat('[..](..)').reverse()
+      .reverse().concat('[⤾](..)').reverse()
     const otherDocsMd = `#### files\n\n - ${ otherDocs.join('\n - ') }`
     const otherDocsHtml = render(otherDocsMd).html
     sidebar.innerHTML += `<hr/>${otherDocsHtml}`

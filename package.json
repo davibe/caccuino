@@ -1,6 +1,6 @@
 {
   "name": "caccuino",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "main": "src/cli.js",
   "repository": "git@github.com:davibe/caccuino.git",
   "author": "Davide Bertola <dade@dadeb.it>",
@@ -14,7 +14,6 @@
   },
   "devDependencies": {
     "@types/node": "^12.6.8",
-    "flatmap": "0.0.3",
     "markdown-it-anchor": "^5.2.4",
     "markdown-it-diagrams": "0.0.6",
     "markdown-it-highlight": "^0.2.0",
@@ -26,6 +25,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "flatmap": "0.0.3",
     "internal-ip": "^4.3.0",
     "open": "^6.4.0",
     "serve-index": "^1.9.1"

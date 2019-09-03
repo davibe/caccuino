@@ -12,14 +12,23 @@ const entryFiles = path.join(sourceDirWebapp, './index.html')
 
 const app = express()
 
+// serve raw files
 app.get('/___raw___*', (req, res, next) => {
   const filePath = req.path.replace(`/___raw___/`, ``)
   const filePathFinal = path.resolve(path.join('.', unescape(filePath)))
   res.sendFile(filePathFinal)
 })
+// serve filesystem structure
+var dirs = []
+(async () => { // continuously poll fs updates
+  while (true) {
+    const [_, list] = await walkDir('.')
+    dirs = list
+    await new Promise( res => setTimeout(res, 5000))
+  }
+})()
 app.get('/___dirs___', async (req, res, next) => {
-  const [obj, list] = await walkDir('.')
-  res.json(list).end()
+  res.json(dirs).end()
 })
 
 app.get('/*.md', (req, res, next) => {

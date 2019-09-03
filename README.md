@@ -3,9 +3,11 @@
 I use this to generate simple technical wikis that are git and markdown based
 
     npm install -g caccuino # or `npm link .` from this repo
-    cd /folder/with/markdown/files # for example `examples` dir in this repo
+    cd /folder/with/markdown/files # for example `example` dir in this repo
     caccuino
-  
+
+![screenshot](screenshot.png)
+
 The spawned server will automatically serve 
 
 - an index for the directory and subdirs
@@ -15,9 +17,9 @@ The spawned server will automatically serve
   - with rendering of mermaidjs diagrams
 - serve any other static file (images, artifacts..)
 
-TODOs:
+features and todos:
 
-- render an outline of the current document
-- render a filetree of adiacent documents
-- better printable css media
-- hotreload changes (?)
+- [x] render an outline of the current document
+- [x] render a filetree of adiacent documents
+- [ ] better printable css media
+- [ ] hotreload changes (?)

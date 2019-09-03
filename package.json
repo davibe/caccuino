@@ -25,7 +25,6 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "flatmap": "0.0.3",
     "internal-ip": "^4.3.0",
     "open": "^6.4.0",
     "serve-index": "^1.9.1"

@@ -17,8 +17,8 @@ app.get('/___raw___*', (req, res, next) => {
   const filePathFinal = path.resolve(path.join('.', unescape(filePath)))
   res.sendFile(filePathFinal)
 })
-app.get('/___dirs___', (req, res, next) => {
-  const [obj, list] = walkDir('.')
+app.get('/___dirs___', async (req, res, next) => {
+  const [obj, list] = await walkDir('.')
   res.json(list).end()
 })
 

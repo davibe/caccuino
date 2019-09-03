@@ -3,6 +3,8 @@ const fs = require('fs').promises
 
 const ignoreDir = (d) => d.startsWith('.') || d.startsWith('node_modules')
 
+const ignoreFile = (f) => !f.match(/\.md$/)
+
 
 const walkDir = async (dir) => {
   var obj = {} // an object similar to { dir: { subdir: { subsub: {} } } }
@@ -23,6 +25,9 @@ const walkDir = async (dir) => {
       obj[dirPath] = obj2
       list = list.concat(list2)
     } else {
+      if (ignoreFile(dirPath)) {
+        continue
+      }
       obj[dirPath] = {}
       list = list.concat(dirPath)
     }

@@ -1,6 +1,7 @@
 # caccuino
 
-I use this to generate simple technical wikis that are git and markdown based
+I use this to serve simple technical wikis that are purely based on markdown, the good old filesystem and no configuration
+
 
     npm install -g caccuino # or `npm link .` from this repo
     cd /folder/with/markdown/files # for example `example` dir in this repo
@@ -8,16 +9,19 @@ I use this to generate simple technical wikis that are git and markdown based
 
 ![screenshot](screenshot.png)
 
-The spawned server will automatically serve 
+The spawned server will serve 
 
-- an index for the directory and subdirs
+- searchable file listing for directories
 - a rendered version of the markdown files
   - using `style.css` from the root directory
   - with codeblock syntax hilight
   - with rendering of mermaidjs diagrams
-- serve any other static file (images, artifacts..)
+  - including a responsive sidebar with
+    - an outline of the current document
+    - a list of adjacent files
+- serve any other static file as is (images, artifacts..)
 
-features and todos:
+#### Under development
 
 - [x] render an outline of the current document
 - [x] render a filetree of adiacent documents

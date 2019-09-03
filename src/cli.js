@@ -19,7 +19,7 @@ app.get('/___raw___*', (req, res, next) => {
   res.sendFile(filePathFinal)
 })
 // serve filesystem structure
-var dirs = []
+var dirs = [];
 (async () => { // continuously poll fs updates
   while (true) {
     const [_, list] = await walkDir('.')

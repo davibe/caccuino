@@ -1,0 +1,13 @@
+// tsconfig.json
+
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "module": "ESNext",
+    "jsx": "preserve",
+    "lib": [
+      "dom",
+      "esnext"
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 const path = require('path')
-const fs = require('fs')
+const fs = require('fs').promises
 
 const ignoreDir = (d) => d.startsWith('.') || d.startsWith('node_modules')
 
@@ -8,14 +8,7 @@ const walkDir = async (dir) => {
   var obj = {}; // an object similar to { dir: { subdir: { subsub: {} } } }
   var list = []; // a list similar to bash $ find .
 
-  const files = await new Promise((res, rej) => {
-    fs.readdir(dir, { withFileTypes: true }, (err, data) => {
-      if (err) {
-        return rej(err)
-      }
-      res(data)
-    })
-  })
+  const files = await fs.readdir(dir, { withFileTypes: true })
 
   for (const dirEnt of files) {
     const f = dirEnt.name

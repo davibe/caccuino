@@ -33,7 +33,7 @@ const doit = async () => {
   if (page) {
     document.querySelector(".content").innerHTML = page.html || "not found"
 
-    // manipulate the document outline
+    // manipulate the document outline (table of contents)
     const sidebar = document.querySelector(".sidebar")
     const tocEl = (_ => {
       const els = document.querySelectorAll(".table-of-contents")
@@ -44,6 +44,9 @@ const doit = async () => {
     }
     sidebar.innerHTML = tocEl.innerHTML
     tocEl.remove()
+
+    // generate pdf download link
+    sidebar.innerHTML += render(`#### [Pdf ♨](/___pdf___/${pagePath})`).html
 
     // generate the  "files" section
     const dirPath = pagePath.split("/").reverse().slice(1).reverse().join(`/`)

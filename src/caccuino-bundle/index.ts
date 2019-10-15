@@ -33,7 +33,10 @@ const doit = async () => {
 
     // manipulate the document outline
     const sidebar = document.querySelector(".sidebar")
-    const tocEl = document.querySelector(".table-of-contents")
+    const tocEl = (_ => {
+      const els = document.querySelectorAll(".table-of-contents")
+      return els[els.length - 1]
+    })()
     if (tocEl) {
       tocEl.innerHTML = "<h4>Outline</h4>" + tocEl.innerHTML
     }

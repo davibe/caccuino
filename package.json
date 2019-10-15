@@ -1,6 +1,6 @@
 {
   "name": "caccuino",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "main": "src/cli.js",
   "repository": "git@github.com:davibe/caccuino.git",
   "author": "Davide Bertola <dade@dadeb.it>",
@@ -9,7 +9,7 @@
     "caccuino": "./src/cli.js"
   },
   "scripts": {
-    "prepublish": "parcel build --detailed-report 10 src/caccuino-bundle/index.html",
+    "prepublish": "rm -rf dist && parcel build --detailed-report 10 src/caccuino-bundle/index.html",
     "start": "node src/cli"
   },
   "devDependencies": {

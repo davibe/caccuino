@@ -28,6 +28,7 @@
     "internal-ip": "^4.3.0",
     "open": "^6.4.0",
     "parceljs": "0.0.1",
+    "puppeteer": "^1.20.0",
     "serve-index": "^1.9.1"
   }
 }

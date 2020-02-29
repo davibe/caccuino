@@ -11,8 +11,13 @@ import 'markdown-it-highlight/dist/index.css'
 const rawFetch = async (pagePath: string): Promise<string> => {
   const res = await fetch(`/___raw___/${pagePath}`)
   const body = `${await res.text()}\n[[toc]]`
-    .replace(/\(~\//g, `(/`) // fix trange paths starting with tilde ~
-    .replace(/\n(#+)([A-Za-z0-9])/g, (h, a, b) => `\n${a} ${b}`) // fix headings with no CommonMark space like #Heading
+    // fix trange paths starting with tilde ~
+    .replace(/\(~\//g, `(/`)
+    // fix headings with no CommonMark space like #Heading
+    .replace(/\n(#+)([A-Za-z0-9])/g, (h, a, b) => `\n${a} ${b}`)
+    // transform: tolerate links with spaces
+    // https://regex101.com/r/LL9mLa/2
+    .replace(/\[(.*)\]\(([^<].* .*[^>])\)/gm, "[$1](<$2>)")
   return body
 }
 

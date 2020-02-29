@@ -24,6 +24,7 @@
     "typescript": "^3.6.2"
   },
   "dependencies": {
+    "es-abstract": "^1.17.4",
     "express": "^4.17.1",
     "internal-ip": "^4.3.0",
     "open": "^6.4.0",

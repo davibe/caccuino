@@ -15,9 +15,15 @@ const rawFetch = async (pagePath: string): Promise<string> => {
     .replace(/\(~\//g, `(/`)
     // fix headings with no CommonMark space like #Heading
     .replace(/\n(#+)([A-Za-z0-9])/g, (h, a, b) => `\n${a} ${b}`)
-    // transform: tolerate links with spaces
+
+    // transform: tolerate links with spaces -> disable because it has problem with recursive
     // https://regex101.com/r/LL9mLa/2
-    .replace(/\[(.*)\]\(([^<].* .*[^>])\)/gm, "[$1](<$2>)")
+    // .replace(/\[(.*)\]\(([^<].* .*[^>])\)/gm, "[$1](<$2>)")
+
+    // transform: add space before inline codeblocks if there is none 
+    // this is to fix kotlin dokka output
+    // https://regex101.com/r/LL9mLa/2
+    // .replace(/([^ ^`])`/gm, "$1 `")
   return body
 }
 

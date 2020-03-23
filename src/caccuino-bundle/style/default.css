@@ -150,9 +150,7 @@ code {
   padding: 0 2px 0 2px;
   padding: 0;
 }
-
 :not(pre)>code {
-  padding: 1px 4px 2px 4px;
   background-color: #f6f6f6;
   border-radius: 3px;
 }

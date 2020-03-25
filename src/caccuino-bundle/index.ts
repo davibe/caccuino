@@ -30,7 +30,7 @@ const rawFetch = async (pagePath: string): Promise<string> => {
 const dirListFetch = async (): Promise<Array<string>> => {
   const res = await fetch(`/___dirs___/`)
   const dirList: Array<string> = await res.json()
-  return dirList
+  return dirList.map((it) => it.replace(/\\/g, "/"))
 }
 
 const doit = async () => {

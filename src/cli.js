@@ -75,7 +75,8 @@ app.use(serveIndex('./', {
   filter: (filename, index, files, dir) => {
     const blacklist = [ 'caccuino-bundle' ]
     return !blacklist.includes(filename)
-  }
+  },
+  icons: true
 }))
 app.use(express.static(sourceDirWebapp))
 app.use(express.static(path.resolve('.')))

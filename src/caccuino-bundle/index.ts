@@ -79,5 +79,8 @@ const doit = async () => {
     document.querySelector(".content").innerHTML = "page not found"
   }
 
+  // restore scroll after rendering
+  document.querySelector(window.location.hash).scrollIntoView()
+
 }
 doit()

@@ -1,6 +1,6 @@
 {
   "name": "caccuino",
-  "version": "0.5.8",
+  "version": "0.5.9",
   "main": "src/cli.js",
   "repository": "git@github.com:davibe/caccuino.git",
   "author": "Davide Bertola <dade@dadeb.it>",

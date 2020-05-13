@@ -12,7 +12,7 @@ const rawFetch = async (pagePath: string): Promise<string> => {
   const res = await fetch(`/___raw___/${pagePath}`)
   const body = `${await res.text()}\n[[toc]]`
     // fix trange paths starting with tilde ~
-    .replace(/\(~\//g, `(/`)
+    // .replace(/\(~\//g, `(/~`)
     // fix headings with no CommonMark space like #Heading
     .replace(/\n(#+)([A-Za-z0-9])/g, (h, a, b) => `\n${a} ${b}`)
 

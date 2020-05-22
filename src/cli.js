@@ -82,7 +82,8 @@ app.use(express.static(sourceDirWebapp))
 app.use(express.static(path.resolve('.')))
 
 const port = process.env['PORT'] || 8080
-app.listen(port)
+const host = process.env['HOST'] || ""
+app.listen(port, host)
 
 const open = require('open')
 open(`http://${ internalIp.v4.sync() || "localhost" }:${ port }`)

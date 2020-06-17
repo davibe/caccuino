@@ -1,4 +1,5 @@
 import 'markdown-it-highlight/dist/index.css'
+import { render, initializeRenderer } from './renderer'
 
 // do this dynamically so parceljs does not try to bundle the link
 ['/style.css'].map(url => {
@@ -36,9 +37,8 @@ const dirListFetch = async (): Promise<Array<string>> => {
 const doit = async () => {
   const pagePath = unescape(window.location.pathname).substr(1)
   // data fetch (parallel)
-  const [body, dirList, renderer] = await Promise.all([rawFetch(pagePath), dirListFetch(), import('./renderer')])
+  const [body, dirList] = await Promise.all([rawFetch(pagePath), dirListFetch(), initializeRenderer()])
 
-  const render = renderer.default
   const page = render(body)
 
   if (page) {

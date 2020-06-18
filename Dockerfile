@@ -21,5 +21,7 @@ ADD . /caccuino
 WORKDIR /caccuino
 RUN npm link && npm run prepublish && rm -rf .cache && rm -rf node_modules && npm install --only=prod
 
+RUN mkdir /workspace
+WORKDIR /workspace
 ENV PORT 3000
 CMD caccuino

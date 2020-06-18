@@ -23,8 +23,17 @@ app.get('/___pdf___*', async (req, res, next) => {
   const filePath = req.path.replace(`/___pdf___/`, ``)
   const url = `http://127.0.0.1:${port}/${filePath}`
   const browser = await puppeteer.launch({
-    headless: false,
-    args: ['--no-sandbox', '--disable-gpu']
+    headless: true,
+    ignoreHTTPSErrors: true,
+    dumpio: false,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--ignore-certificate-errors',
+      '--proxy-server="direct://"',
+      '--proxy-bypass-list=*',
+      '--disable-gpu'
+    ]
   })
   const page = await browser.newPage()
   await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 })

@@ -22,7 +22,10 @@ app.get('/___raw___*', (req, res, next) => {
 app.get('/___pdf___*', async (req, res, next) => {
   const filePath = req.path.replace(`/___pdf___/`, ``)
   const url = `http://127.0.0.1:${port}/${filePath}`
-  const browser = await puppeteer.launch()
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-gpu']
+  })
   const page = await browser.newPage()
   await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 })
   await page.setJavaScriptEnabled(true)

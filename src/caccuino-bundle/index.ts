@@ -73,7 +73,8 @@ const doit = async () => {
       .reverse().concat('[⤾](..)').reverse()
     const otherDocsMd = `#### files\n\n - ${ otherDocs.join('\n - ') }`
     const otherDocsHtml = render(otherDocsMd).html
-    sidebar.innerHTML += `<hr/>${otherDocsHtml}`
+    // sidebar.innerHTML += `<hr/>${otherDocsHtml}`
+    sidebar.innerHTML += '<a onclick="window.history.back()">⤾</a>'
 
   } else {
     document.querySelector(".content").innerHTML = "page not found"

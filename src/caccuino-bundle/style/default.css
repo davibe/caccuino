@@ -206,6 +206,10 @@ img {
   -webkit-overflow-scrolling: touch;
 }
 
+.content a {
+  text-decoration: underline;
+}
+
 /* sidebar (document outline) management */
 
 @media only print {
@@ -242,7 +246,7 @@ img {
     background-color: #f8f8f8;
     padding: 1.5em;
     margin: 0em;
-    overflow-y: scroll;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     max-width: 25%;
     margin-top: 2em;

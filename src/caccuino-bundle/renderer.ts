@@ -1,5 +1,12 @@
+const MarkdownIt = require('markdown-it')
+const Meta = require('markdown-it-meta')
+const hljs = require('markdown-it-highlight')
+const anchor = require('markdown-it-anchor')
+const toc = require('markdown-it-table-of-contents')
+const diagramPlugin = require('./diagramPlugin')
 
 const mdGen = async () => {
+  /*
   const [
     MarkdownIt,
     Meta, 
@@ -15,6 +22,7 @@ const mdGen = async () => {
     import('markdown-it-table-of-contents'),
     import('./diagramPlugin')
   ])
+  */
 
   return new MarkdownIt('default', {
     html: true,

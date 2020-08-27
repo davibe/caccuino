@@ -38,12 +38,16 @@ app.get('/___pdf___*', async (req, res, next) => {
   const page = await browser.newPage()
   await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 })
   await page.setJavaScriptEnabled(true)
+  page.on('request', (p) => console.log('request', p._url))
+  page.on('requestfailed', (p) => console.log('requestfailed', p._url))
+  page.on('requestfinished', (p) => console.log('requestfinished', p._url))
   await page.goto(
     url,
     {
       waitUntil: "networkidle0"
     }
   )
+
   const buffer = await page.pdf({
     format: "A4",
     printBackground: true,

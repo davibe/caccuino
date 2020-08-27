@@ -81,7 +81,7 @@ const doit = async () => {
   }
 
   // restore scroll after renderin7
-  document.querySelector(window.location.hash).scrollIntoView()
+  window.location.hash && document.querySelector(window.location.hash).scrollIntoView()
 
 }
 doit()

@@ -1,31 +1,36 @@
+#!/usr/bin/env node
+
 const { src, dest, series, parallel } = require('gulp')
 const transform = require('gulp-transform')
 const rename = require('gulp-rename')
 
-import { initializeRenderer, render } from './renderer'
+import { render } from './renderer'
 
 function renderMd(content: String, file: String) {
   return `
-  <html>
-    <head>
-      <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css">
-    </head>
-    <body>
-      <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-      <script>mermaid.initialize({startOnLoad:true});</script>
-
-      ${render(content).html}
-
-    </body>
-  </html>
+<script>
+const l = document.createElement("link")
+l.type = "text/css"
+l.rel = "stylesheet"
+l.href = "//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css"
+document.getElementsByTagName("head")[0].appendChild(l)
+</script>
+<style>
+.hljs {
+  background-color: transparent;
+}
+</style>
+<script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+${render(content).html.trimLeft()}
   `
 }
 
-async function md() {
-  await initializeRenderer()
-  return src(['./**/*.md', '!dist/**/*'])
+function md() {
+  return src(['./**/*.md', '!dist/**/*', "!node_modules/**/*"])
     .pipe(transform('utf8', renderMd))
-    .pipe(dest('dist'))
+    .pipe(rename({ suffix: "-rendered" }))
+    .pipe(dest('.'))
 }
 
 series(md)()

@@ -1,8 +1,8 @@
 {
   "name": "deltapaguro",
-  "version": "0.0.1",
-  "main": "src/cli.js",
-  "repository": "git@github.com:davibe/caccuino.git",
+  "version": "0.0.2",
+  "main": "out/deltapaguro.js",
+  "repository": "git@github.com:davibe/deltapaguro.git",
   "author": "Davide Bertola <dade@dadeb.it>",
   "license": "MIT",
   "bin": {
@@ -13,22 +13,23 @@
     "prepublish": "tsc"
   },
   "devDependencies": {
-    "@types/gulp": "^4.0.7",
     "@babel/core": "^7.9.6",
-    "typescript": "^3.6.2",
+    "@types/gulp": "^4.0.7",
+    "@types/node": "^12.19.3",
     "es-abstract": "^1.17.4",
-    "@types/node": "^12.6.8",
-    "ts-node": "^9.0.0"
+    "ts-node": "^9.0.0",
+    "typescript": "^3.6.2"
   },
   "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-transform": "^3.0.5",
     "markdown-it": "^10.0.0",
     "markdown-it-anchor": "^5.2.4",
     "markdown-it-highlight": "^0.2.0",
     "markdown-it-meta": "0.0.1",
-    "markdown-it-table-of-contents": "davibe/markdown-it-table-of-contents#master",
-    "gulp": "^4.0.2",
-    "gulp-cli": "^2.3.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-transform": "^3.0.5"
+    "markdown-it-replace-link": "^1.1.0",
+    "markdown-it-table-of-contents": "davibe/markdown-it-table-of-contents#master"
   }
 }

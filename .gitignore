@@ -3,5 +3,6 @@ dist
 .cache
 cache
 /caccuino-bundle
+out
 
 .DS_Store

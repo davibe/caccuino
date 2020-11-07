@@ -1,3 +1,8 @@
 node_modules
 .cache
 .DS_Store
+.vscode
+dist
+example
+tsconfig.json
+src

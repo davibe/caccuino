@@ -30,7 +30,7 @@ ${render(content).html.trimLeft()}
 function md() {
   return src(['./**/*.md', '!dist/**/*', "!node_modules/**/*"])
     .pipe(transform('utf8', renderMd))
-    // .pipe(rename({ suffix: "-rendered" }))
+    .pipe(rename({ extname: ".html" }))
     .pipe(dest('dist'))
 }
 

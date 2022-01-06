@@ -20,7 +20,7 @@
     "markdown-it-highlight": "^0.2.0",
     "markdown-it-meta": "0.0.1",
     "markdown-it-table-of-contents": "davibe/markdown-it-table-of-contents#master",
-    "mermaid": "^8.5.0",
+    "mermaid": "^8.13.8",
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-markdown-string": "^1.3.5",
     "typescript": "^3.6.2"

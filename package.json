@@ -15,7 +15,7 @@
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@types/node": "^12.6.8",
-    "markdown-it": "^10.0.0",
+    "markdown-it": "^12.3.2",
     "markdown-it-anchor": "^5.2.4",
     "markdown-it-highlight": "^0.2.0",
     "markdown-it-meta": "0.0.1",

@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "es-abstract": "^1.17.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "internal-ip": "^4.3.0",
     "open": "^6.4.0",
     "parceljs": "0.0.1",
